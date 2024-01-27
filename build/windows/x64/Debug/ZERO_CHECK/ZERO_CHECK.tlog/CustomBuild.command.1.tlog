@@ -1,0 +1,10 @@
+^C:\USERS\JG SILVA\DOCUMENTS\GITHUB\CRONO_TIME\BUILD\WINDOWS\CMAKEFILES\4B577574059A5A5A61687FD2B162DDC9\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SC:/Users/JG Silva/Documents/GitHub/crono_time/windows" "-BC:/Users/JG Silva/Documents/GitHub/crono_time/build/windows" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/JG Silva/Documents/GitHub/crono_time/build/windows/crono_time.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

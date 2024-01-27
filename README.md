@@ -1,3 +1,2 @@
-# crono_time
-
-A new Flutter project.
+# CronoTIme
+Aplicação GEradora de Ciclo de Estudo

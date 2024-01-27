@@ -1,0 +1,9 @@
+C:/Users/JG Silva/Documents/GitHub/crono_time/build/windows/runner/Debug/data/icudtl.dat
+C:/Users/JG Silva/Documents/GitHub/crono_time/build/windows/runner/Debug/flutter_windows.dll
+C:/Users/JG Silva/Documents/GitHub/crono_time/build/windows/runner/Debug/data/flutter_assets/AssetManifest.bin
+C:/Users/JG Silva/Documents/GitHub/crono_time/build/windows/runner/Debug/data/flutter_assets/AssetManifest.json
+C:/Users/JG Silva/Documents/GitHub/crono_time/build/windows/runner/Debug/data/flutter_assets/FontManifest.json
+C:/Users/JG Silva/Documents/GitHub/crono_time/build/windows/runner/Debug/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+C:/Users/JG Silva/Documents/GitHub/crono_time/build/windows/runner/Debug/data/flutter_assets/kernel_blob.bin
+C:/Users/JG Silva/Documents/GitHub/crono_time/build/windows/runner/Debug/data/flutter_assets/NOTICES.Z
+C:/Users/JG Silva/Documents/GitHub/crono_time/build/windows/runner/Debug/data/flutter_assets/shaders/ink_sparkle.frag

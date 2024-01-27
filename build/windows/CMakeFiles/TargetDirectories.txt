@@ -1,0 +1,10 @@
+C:/Users/JG Silva/Documents/GitHub/crono_time/build/windows/CMakeFiles/INSTALL.dir
+C:/Users/JG Silva/Documents/GitHub/crono_time/build/windows/CMakeFiles/ALL_BUILD.dir
+C:/Users/JG Silva/Documents/GitHub/crono_time/build/windows/CMakeFiles/ZERO_CHECK.dir
+C:/Users/JG Silva/Documents/GitHub/crono_time/build/windows/flutter/CMakeFiles/flutter_wrapper_plugin.dir
+C:/Users/JG Silva/Documents/GitHub/crono_time/build/windows/flutter/CMakeFiles/flutter_wrapper_app.dir
+C:/Users/JG Silva/Documents/GitHub/crono_time/build/windows/flutter/CMakeFiles/flutter_assemble.dir
+C:/Users/JG Silva/Documents/GitHub/crono_time/build/windows/flutter/CMakeFiles/INSTALL.dir
+C:/Users/JG Silva/Documents/GitHub/crono_time/build/windows/runner/CMakeFiles/crono_time.dir
+C:/Users/JG Silva/Documents/GitHub/crono_time/build/windows/runner/CMakeFiles/INSTALL.dir
+C:/Users/JG Silva/Documents/GitHub/crono_time/build/windows/runner/CMakeFiles/ALL_BUILD.dir

@@ -1,0 +1,10 @@
+^C:\USERS\JG SILVA\DOCUMENTS\GITHUB\CRONO_TIME\BUILD\WINDOWS\CMAKEFILES\4B577574059A5A5A61687FD2B162DDC9\INSTALL_FORCE.RULE
+setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
