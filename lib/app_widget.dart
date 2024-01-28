@@ -6,10 +6,13 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
+      darkTheme:
+          ThemeData(primaryColor: const Color.fromARGB(255, 255, 208, 40)),
       themeMode: ThemeMode.dark,
-      home: HomePage(),
+      theme: ThemeData.dark(useMaterial3: true),
+      home: const HomePage(),
     );
   }
 }
