@@ -1,54 +1,88 @@
+import 'dart:developer';
+
 import 'package:crono_time/models/curso_model.dart';
 import 'package:crono_time/models/item_cycle.dart';
 
 class CycleCraft {
-  // CALCULA O PESO NORMALIZADOS
-  pesoNormalized(CursoModel curso, int peso) {
-    double somaPesos = 0;
+// SSOMA TOTALDO SPESOS ORIGINAIS [ relevancia e dificudade]
+  somaPesoNormal(CursoModel curso) {
+    double somatotal = 0;
     for (var e in curso.materias) {
-      somaPesos = somaPesos + e.peso;
+      somatotal = somatotal + (e.dif + e.peso);
     }
-    return peso / somaPesos;
+    return somatotal;
   }
 
-// CALCULA DIFICULDADE NORMALIZADOS
-  dificuldadeNormalized(CursoModel curso, int dif) {
-    double somaDif = 0;
-    for (var e in curso.materias) {
-      somaDif = somaDif + e.dif;
-    }
-    return dif / somaDif;
+  double pontPonderada(CursoModel curso, int dif, double peso) {
+    var ptotal = somaPesoNormal(curso);
+    double medidapond = (dif * ptotal) + (peso * ptotal);
+
+    return medidapond;
   }
 
-// CALCULA OS PONTOS NORMALIZADOS
-  pontonormalizado(CursoModel curso, double ponto) {
-    double pontosoma = 0;
-    for (var e in curso.materias) {
-      pontosoma = pontosoma +
-          (pesoNormalized(curso, e.peso) * dificuldadeNormalized(curso, e.dif));
+  totalhoraspond(List<ItemCycle> itens) {
+    double somapond = 0;
+    for (var mat in itens) {
+      somapond = somapond + mat.pontopoderado;
     }
-    return ponto / pontosoma;
+    return somapond;
+  }
+
+  ajustHours({required double horasstudy}) {
+    double horas = 0;
+    double minutos = 0;
+
+    horas = double.parse((horasstudy / 60).toStringAsFixed(2));
+    var decimos = horas - horas.toInt();
+    minutos = double.parse(decimos.toStringAsFixed(2));
+
+    if (minutos >= 0.60) {
+      horas = confMinuts(horas: horas, min: minutos);
+    }
+
+    return horas;
+  }
+
+  confMinuts({required double horas, required double min}) {
+    double newhoras = 0;
+    var time = double.parse((min / 0.60).toStringAsFixed(2));
+    newhoras = (horas - min);
+    newhoras += time;
+
+    ajustHours(horasstudy: newhoras * 60);
+
+    return newhoras;
   }
 
 //CALCULA AS HORAS
-  calcHours(CursoModel curso, double pontopod) {
-    return (pontopod * curso.horaslivres) / 24;
-  }
-
-// CRIAR UMA LSIAT DE ESTUDO DEFINIDO COM ORAS
-  List<ItemCycle> creatCycle(CursoModel curso) {
+  calcHours(double tempo, List<ItemCycle> itens) {
     List<ItemCycle> newlist = [];
-    for (var e in curso.materias) {
-      double x =
-          pesoNormalized(curso, e.peso) * dificuldadeNormalized(curso, e.dif);
+    double totalpod = totalhoraspond(itens);
+    for (var e in itens) {
+      // log((e.pontopoderado / totalpod).toString());
       newlist.add(ItemCycle(
           nome: e.nome,
-          tempostudy: calcHours(curso, pontonormalizado(curso, x)),
-          pesonormal: pesoNormalized(curso, e.peso),
-          difnormal: dificuldadeNormalized(curso, e.dif),
-          pontopoderado: pontonormalizado(curso, x)));
+          tempostudy: ajustHours(
+              horasstudy: (e.pontopoderado / totalpod) * (tempo * 60)),
+          pontopoderado: e.pontopoderado));
+    }
+    for (var e in newlist) {
+      log(e.tempostudy.toString());
     }
 
     return newlist;
+  }
+
+// CRIAR UMA LSIAT DE ESTUDO DEFINIDO COM ORAS
+  List<ItemCycle> creatCycle({required CursoModel curso}) {
+    List<ItemCycle> newlist = [];
+    for (var e in curso.materias) {
+      newlist.add(ItemCycle(
+          nome: e.nome,
+          tempostudy: 0,
+          pontopoderado: pontPonderada(curso, e.dif, e.peso)));
+    }
+
+    return calcHours(curso.horaslivres, newlist);
   }
 }

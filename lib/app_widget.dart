@@ -8,8 +8,9 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      darkTheme:
-          ThemeData(primaryColor: const Color.fromARGB(255, 255, 208, 40)),
+      darkTheme: ThemeData(
+          primaryColor: const Color.fromARGB(255, 255, 208, 40),
+          primaryColorDark: const Color.fromARGB(255, 31, 31, 31)),
       themeMode: ThemeMode.dark,
       theme: ThemeData.dark(useMaterial3: true),
       home: const HomePage(),

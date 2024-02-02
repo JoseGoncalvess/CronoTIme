@@ -19,10 +19,11 @@ class CadField extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            const Expanded(
+            const Flexible(
               child: Padding(
                 padding: EdgeInsets.only(left: 4, right: 4),
-                child: TextField(),
+                child: TextField(
+                    decoration: InputDecoration(border: OutlineInputBorder())),
               ),
             )
           ],

@@ -1,16 +1,13 @@
 import 'dart:convert';
+import 'dart:ffi';
 
 class ItemCycle {
   final String nome;
-  final String tempostudy;
-  final double pesonormal;
-  final double difnormal;
+  final double tempostudy;
   final double pontopoderado;
   ItemCycle({
     required this.nome,
     required this.tempostudy,
-    required this.pesonormal,
-    required this.difnormal,
     required this.pontopoderado,
   });
 
@@ -18,8 +15,6 @@ class ItemCycle {
     return <String, dynamic>{
       'nome': nome,
       'tempostudy': tempostudy,
-      'pesonormal': pesonormal,
-      'difnormal': difnormal,
       'pontopoderado': pontopoderado,
     };
   }
@@ -27,9 +22,7 @@ class ItemCycle {
   factory ItemCycle.fromMap(Map<String, dynamic> map) {
     return ItemCycle(
       nome: map['nome'] as String,
-      tempostudy: map['tempostudy'] as String,
-      pesonormal: map['pesonormal'] as double,
-      difnormal: map['difnormal'] as double,
+      tempostudy: map['tempostudy'] as double,
       pontopoderado: map['pontopoderado'] as double,
     );
   }

@@ -1,13 +1,16 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 class MateriaModel {
   final String nome;
   final int dif;
-  final int peso;
+  final double peso;
+  final double pontop;
   MateriaModel({
     required this.nome,
     required this.dif,
     required this.peso,
+    required this.pontop,
   });
 
   Map<String, dynamic> toMap() {
@@ -15,6 +18,7 @@ class MateriaModel {
       'nome': nome,
       'dif': dif,
       'peso': peso,
+      'pontop': pontop,
     };
   }
 
@@ -22,7 +26,8 @@ class MateriaModel {
     return MateriaModel(
       nome: map['nome'] as String,
       dif: map['dif'] as int,
-      peso: map['peso'] as int,
+      peso: map['peso'] as double,
+      pontop: map['pontop'] as double,
     );
   }
 
